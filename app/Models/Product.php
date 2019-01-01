@@ -11,6 +11,20 @@ class Product extends Model
     protected $casts = [
         'on_sale' => 'boolean', // on_sale 是一个布尔类型的字段
     ];
+
+    const TYPE_SECKILL = 'seckill';
+
+    public static $typeMap = [
+        
+        self::TYPE_SECKILL => '秒杀商品',
+    ];
+
+    public function seckill()
+    {
+        return $this->hasOne(Seckill_Product::class);
+    }
+
+
     // 与商品SKU关联
     public function skus()
     {
