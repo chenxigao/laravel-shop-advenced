@@ -25,8 +25,10 @@ class Category extends Model
             } else {
                 //将层级设为父类目的层级 +1
                 $category->level = $category->parent->level + 1;
+
                 //将 path 值设置为父类目的 path 追加父类目 ID 以及最后一个跟上一个 - 分隔符
-                $category->path = $category->parent->path.$category->parent_id.'-'; 
+                $category->path = $category->parent->path.$category->parent_id.'-';
+
             }
         });
         
@@ -74,7 +76,7 @@ class Category extends Model
         return $this->ancestors //获取所有祖先类目
                     ->pluck('name') // 取出所有祖先类目中的 name 字段作为一个数组
                     ->push($this->name) // 将当前类目的 name 字段值加到数组的末尾
-                    ->implode('-'); //用 - 符号将数组的值 组装成一个字符串
+                    ->implode(' - '); //用 - 符号将数组的值 组装成一个字符串
     }
     
 }

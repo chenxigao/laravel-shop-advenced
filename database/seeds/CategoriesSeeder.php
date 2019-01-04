@@ -14,21 +14,21 @@ class CategoriesSeeder extends Seeder
     {
         $categories = [
           [
-            'name' => '手机配件',
-            'children' => [
-                 ['name' => '手机壳'],
-                 ['name' => '贴膜'],
-                 ['name' => '存储卡'],
-                 ['name' => '数据线'],
-                 ['name' => '充电器'],
-                 [
-                         'name' => '耳机',
-                         'children' => [
-                                 ['name' => '有线耳机'],
-                                 ['name' => '蓝牙耳机'],
-                         ],
-                 ],
-            ],
+                  'name'     => '手机配件',
+                  'children' => [
+                          ['name' => '手机壳'],
+                          ['name' => '贴膜'],
+                          ['name' => '存储卡'],
+                          ['name' => '数据线'],
+                          ['name' => '充电器'],
+                          [
+                                  'name'     => '耳机',
+                                  'children' => [
+                                          ['name' => '有线耳机'],
+                                          ['name' => '蓝牙耳机'],
+                                  ],
+                          ],
+                  ],
           ],
           [
              'name' => '电脑配件',
@@ -65,10 +65,9 @@ class CategoriesSeeder extends Seeder
         foreach ($categories as $data){
             $this->createCategory($data);
         }
-
     }
 
-    public function createCategory($data, $parent = null)
+    protected function createCategory($data, $parent = null)
     {
         //创建一个新的类目对象
         $category = new Category(['name' => $data['name']]);
