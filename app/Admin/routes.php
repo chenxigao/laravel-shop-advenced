@@ -35,9 +35,9 @@ Route::group([
     $router->get('api/categories', 'CategoriesController@apiIndex');
 
     //秒杀相关路由
-    $router->get('seckill_products','SeckillProductsController@index');
+    $router->get('seckill_products', 'SeckillProductsController@index');
     $router->get('seckill_products/create', 'SeckillProductsController@create');
-    $router->post('seckill_products','SeckillProductsController@store');
-    $router->get('seckill_products/{id}/edit','SeckillProductsController@edit');
-    $router->put('seckill_products/{id}','SeckillProductsController@update');
+    $router->post('seckill_products', 'SeckillProductsController@store');
+    $router->get('seckill_products/{id}/edit', 'SeckillProductsController@edit');
+    $router->put('seckill_products/{id}', 'SeckillProductsController@update');
 });
