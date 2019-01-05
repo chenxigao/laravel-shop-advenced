@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
-
 Admin::registerAuthRoutes();
-
 Route::group([
     'prefix'        => config('admin.route.prefix'),
     'namespace'     => config('admin.route.namespace'),

@@ -60,7 +60,6 @@ class CategoriesController extends Controller
     {
         // Laravel-Admin 1.5.19 之后的新写法，原写法也仍然可用
         $form = new Form(new Category);
-
         $form->text('name', '类目名称')->rules('required');
 
         // 如果是编辑的情况
@@ -82,7 +81,7 @@ class CategoriesController extends Controller
             // 定义一个名为父类目的下拉框
             $form->select('parent_id', '父类目')->ajax('/admin/api/categories');
         }
-
+//        dd($form);
         return $form;
     }
 
