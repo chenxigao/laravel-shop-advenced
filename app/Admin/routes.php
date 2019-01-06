@@ -34,6 +34,13 @@ Route::group([
     $router->delete('categories/{id}','CategoriesController@destroy');
     $router->get('api/categories', 'CategoriesController@apiIndex');
 
+    //众筹商品相关路由
+    $router->get('crowdfunding_products', 'CrowdfundingProductsController@index');
+    $router->get('crowdfunding_products/create', 'CrowdfundingProductsController@create');
+    $router->post('crowdfunding_products', 'CrowdfundingProductsController@store');
+    $router->get('crowdfunding_products/{id}/edit', 'CrowdfundingProductsController@edit');
+    $router->put('crowdfunding_products/{id}', 'CrowdfundingProductsController@update');
+
     //秒杀相关路由
     $router->get('seckill_products', 'SeckillProductsController@index');
     $router->get('seckill_products/create', 'SeckillProductsController@create');

@@ -22,7 +22,7 @@ class CrowdfundingProduct extends Model
     //end_at 会自动转换成 Carbon 类型
     protected $dates = ['end_at'];
     //不需要 created_at 和 updated_at 字段
-    protected $timestamp = false;
+    public $timestamps = false;
 
     public function product()
     {
