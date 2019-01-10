@@ -38,9 +38,9 @@ class CrowdFundingOrderRequest extends Request
                },
             ],
             'amount' => ['required','integer','min:1'],
-            'user_id' => [
+            'address_id' => [
                     'required',
-                    Rule::exists('user_address', 'id')->where('user_id', $this->user()->id),
+                    Rule::exists('user_addresses', 'id')->where('user_id', $this->user()->id),
             ]
 
         ];
